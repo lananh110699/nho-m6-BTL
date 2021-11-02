@@ -11,9 +11,9 @@ namespace nhóm6_BTL.Models
     {
         [Key]
         [StringLength(50)]
-        public string UserName { get; set; }
+        public string TenDangNhap { get; set; }
 
         [StringLength(50)]
-        public string Password { get; set; }
+        public string MatKhau { get; set; }
     }
 }

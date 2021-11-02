@@ -13,15 +13,19 @@ namespace nhóm6_BTL.Models
         }
 
         public virtual DbSet<DangNhap> DangNhaps { get; set; }
+        public virtual DbSet<XuatKho> XuatKhos { get; set; }
+        public virtual DbSet<NhapKho> NhapKhos { get; set; }
+        public virtual DbSet<HangHoa> HangHoas { get; set; }
+        public virtual DbSet<BaoCao> BaoCaos { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<DangNhap>()
-                .Property(e => e.UserName)
+                .Property(e => e.TenDangNhap)
                 .IsUnicode(false);
 
             modelBuilder.Entity<DangNhap>()
-                .Property(e => e.Password)
+                .Property(e => e.MatKhau)
                 .IsUnicode(false);
         }
     }

@@ -1,0 +1,43 @@
+﻿@model nhóm6_BTL.Models.BaoCao
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>BaoCao</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DoanhThuTheoQuy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DoanhThuTheoQuy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DonHangTrongNgay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DonHangTrongNgay)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DonHangTrongThang)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DonHangTrongThang)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.DoanhThuTheoThang }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

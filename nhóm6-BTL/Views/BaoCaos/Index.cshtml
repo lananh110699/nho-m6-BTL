@@ -1,0 +1,46 @@
+﻿@model IEnumerable<nhóm6_BTL.Models.BaoCao>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DoanhThuTheoQuy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DonHangTrongNgay)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DonHangTrongThang)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DoanhThuTheoQuy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DonHangTrongNgay)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DonHangTrongThang)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.DoanhThuTheoThang }) |
+            @Html.ActionLink("Details", "Details", new { id=item.DoanhThuTheoThang }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.DoanhThuTheoThang })
+        </td>
+    </tr>
+}
+
+</table>
