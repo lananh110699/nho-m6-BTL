@@ -17,7 +17,7 @@ namespace nhóm6_BTL.Controllers
         // GET: NhapKhoes
         public ActionResult Index()
         {
-            return View(db.XuatKhos.ToList());
+            return View(db.NhapKhos.ToList());
         }
 
         // GET: NhapKhoes/Details/5
@@ -27,7 +27,7 @@ namespace nhóm6_BTL.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            NhapKho nhapKho = db.XuatKhos.Find(id);
+            NhapKho nhapKho = db.NhapKhos.Find(id);
             if (nhapKho == null)
             {
                 return HttpNotFound();
@@ -46,11 +46,11 @@ namespace nhóm6_BTL.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MaHang,TenHang,SoLuong,DonGia")] NhapKho nhapKho)
+        public ActionResult Create([Bind(Include = "MaPhieuNhap,NgayXuat,MaHang,SoLuong,DonGia,MaNV")] NhapKho nhapKho)
         {
             if (ModelState.IsValid)
             {
-                db.XuatKhos.Add(nhapKho);
+                db.NhapKhos.Add(nhapKho);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -65,7 +65,7 @@ namespace nhóm6_BTL.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            NhapKho nhapKho = db.XuatKhos.Find(id);
+            NhapKho nhapKho = db.NhapKhos.Find(id);
             if (nhapKho == null)
             {
                 return HttpNotFound();
@@ -78,7 +78,7 @@ namespace nhóm6_BTL.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "MaHang,TenHang,SoLuong,DonGia")] NhapKho nhapKho)
+        public ActionResult Edit([Bind(Include = "MaPhieuNhap,NgayXuat,MaHang,SoLuong,DonGia,MaNV")] NhapKho nhapKho)
         {
             if (ModelState.IsValid)
             {
@@ -96,7 +96,7 @@ namespace nhóm6_BTL.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            NhapKho nhapKho = db.XuatKhos.Find(id);
+            NhapKho nhapKho = db.NhapKhos.Find(id);
             if (nhapKho == null)
             {
                 return HttpNotFound();
@@ -109,8 +109,8 @@ namespace nhóm6_BTL.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            NhapKho nhapKho = db.XuatKhos.Find(id);
-            db.XuatKhos.Remove(nhapKho);
+            NhapKho nhapKho = db.NhapKhos.Find(id);
+            db.NhapKhos.Remove(nhapKho);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

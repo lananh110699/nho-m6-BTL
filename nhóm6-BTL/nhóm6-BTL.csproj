@@ -141,6 +141,10 @@
     <Compile Include="Migrations\202111020637172_create_4_table.Designer.cs">
       <DependentUpon>202111020637172_create_4_table.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202111050724272_ceate_table_hanghoa.cs" />
+    <Compile Include="Migrations\202111050724272_ceate_table_hanghoa.Designer.cs">
+      <DependentUpon>202111050724272_ceate_table_hanghoa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BaoCao.cs" />
     <Compile Include="Models\DangNhap.cs" />
@@ -196,6 +200,11 @@
     <Content Include="Views\BaoCaos\Details.cshtml" />
     <Content Include="Views\BaoCaos\Edit.cshtml" />
     <Content Include="Views\BaoCaos\Index.cshtml" />
+    <Content Include="Views\XuatKhoes\Create.cshtml" />
+    <Content Include="Views\XuatKhoes\Delete.cshtml" />
+    <Content Include="Views\XuatKhoes\Details.cshtml" />
+    <Content Include="Views\XuatKhoes\Edit.cshtml" />
+    <Content Include="Views\XuatKhoes\Index.cshtml" />
     <Content Include="Views\HangHoas\Create.cshtml" />
     <Content Include="Views\HangHoas\Delete.cshtml" />
     <Content Include="Views\HangHoas\Details.cshtml" />
@@ -206,11 +215,6 @@
     <Content Include="Views\NhapKhoes\Details.cshtml" />
     <Content Include="Views\NhapKhoes\Edit.cshtml" />
     <Content Include="Views\NhapKhoes\Index.cshtml" />
-    <Content Include="Views\XuatKhoes\Create.cshtml" />
-    <Content Include="Views\XuatKhoes\Delete.cshtml" />
-    <Content Include="Views\XuatKhoes\Details.cshtml" />
-    <Content Include="Views\XuatKhoes\Edit.cshtml" />
-    <Content Include="Views\XuatKhoes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -231,6 +235,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202111020637172_create_4_table.resx">
       <DependentUpon>202111020637172_create_4_table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111050724272_ceate_table_hanghoa.resx">
+      <DependentUpon>202111050724272_ceate_table_hanghoa.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

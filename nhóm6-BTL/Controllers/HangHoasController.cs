@@ -17,7 +17,7 @@ namespace nhóm6_BTL.Controllers
         // GET: HangHoas
         public ActionResult Index()
         {
-            return View(db.XuatKhos.ToList());
+            return View(db.HangHoas.ToList());
         }
 
         // GET: HangHoas/Details/5
@@ -27,7 +27,7 @@ namespace nhóm6_BTL.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            HangHoa hangHoa = db.XuatKhos.Find(id);
+            HangHoa hangHoa = db.HangHoas.Find(id);
             if (hangHoa == null)
             {
                 return HttpNotFound();
@@ -46,11 +46,11 @@ namespace nhóm6_BTL.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MaHang,TenHang,SoLuong,DonGia")] HangHoa hangHoa)
+        public ActionResult Create([Bind(Include = "MaHang,TenHang,Size,SoLuong,DonGia")] HangHoa hangHoa)
         {
             if (ModelState.IsValid)
             {
-                db.XuatKhos.Add(hangHoa);
+                db.HangHoas.Add(hangHoa);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -65,7 +65,7 @@ namespace nhóm6_BTL.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            HangHoa hangHoa = db.XuatKhos.Find(id);
+            HangHoa hangHoa = db.HangHoas.Find(id);
             if (hangHoa == null)
             {
                 return HttpNotFound();
@@ -78,7 +78,7 @@ namespace nhóm6_BTL.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "MaHang,TenHang,SoLuong,DonGia")] HangHoa hangHoa)
+        public ActionResult Edit([Bind(Include = "MaHang,TenHang,Size,SoLuong,DonGia")] HangHoa hangHoa)
         {
             if (ModelState.IsValid)
             {
@@ -96,7 +96,7 @@ namespace nhóm6_BTL.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            HangHoa hangHoa = db.XuatKhos.Find(id);
+            HangHoa hangHoa = db.HangHoas.Find(id);
             if (hangHoa == null)
             {
                 return HttpNotFound();
@@ -109,8 +109,8 @@ namespace nhóm6_BTL.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            HangHoa hangHoa = db.XuatKhos.Find(id);
-            db.XuatKhos.Remove(hangHoa);
+            HangHoa hangHoa = db.HangHoas.Find(id);
+            db.HangHoas.Remove(hangHoa);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
